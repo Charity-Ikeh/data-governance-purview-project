@@ -1,52 +1,56 @@
-# Data Governance & Microsoft Purview Project
+# Enterprise Data Governance Project — Microsoft Purview Implementation
+
+## Status
+🚧 In Progress — build started July 2026
 
 ## Overview
-This project demonstrates practical application of data governance principles using Microsoft Purview, applied to a sample banking operations dataset. It covers data cataloguing, classification, business glossary development, and data lineage documentation, reflecting real-world data governance practice.
+This project demonstrates the practical implementation of enterprise data governance using Microsoft Purview, applied to a representative banking transaction dataset. It covers the core disciplines of modern data governance: data cataloguing, classification, business glossary development, data ownership and stewardship definition, and data lineage documentation.
 
-## Objective
-To apply enterprise data governance concepts, hands-on, using Microsoft Purview, and document the process in a way that reflects how data governance is practised in regulated environments such as banking and financial services.
+The project reflects how data governance functions operate in regulated environments such as banking and financial services, where trust, traceability, and accountability over data are business-critical, not optional.
+
+## Objectives
+- Establish a governed data catalog for a banking transaction dataset using Microsoft Purview
+- Apply data classification and sensitivity labelling aligned with UK GDPR and data protection principles
+- Define a business glossary of Critical Data Elements relevant to banking operations
+- Assign and document data ownership and stewardship roles
+- Document end-to-end data lineage to support audit readiness and regulatory traceability
+- Demonstrate the operational, day-to-day discipline of data governance practice, not just theoretical frameworks
 
 ## Dataset
-[Link to or brief description of the banking dataset used — reuse the NIBSS dataset from your banking-operations-analytics project]
+Banking transaction dataset (NIBSS dataset, 20,000 records), covering customer transaction data across multiple channels — used here purely as the subject of governance activity: cataloguing, classification, glossary definition, and lineage mapping.
 
-## What This Project Covers
+## Governance Framework Applied
 
-### 1. Purview Environment Setup
-- Microsoft 365 developer tenant configuration
-- Purview account setup and initial configuration
-- [Add screenshots to /screenshots folder]
+### 1. Data Ownership & Stewardship
+Defining clear data ownership across the dataset's domains, identifying data stewards responsible for data quality and definition accuracy, and establishing accountability structures consistent with DAMA-DMBOK principles.
 
-### 2. Data Catalog & Classification
-- Registering and scanning the dataset in Purview
-- Applying sensitivity labels and classifications to relevant fields (e.g. account numbers, customer identifiers)
-- [Add screenshots]
+### 2. Data Cataloguing
+Registering the dataset within Microsoft Purview's Data Map, scanning to surface schema, structure, and metadata, and establishing a searchable, governed catalog entry.
 
-### 3. Business Glossary
-- Defined business terms for key data elements (e.g. Critical Data Elements, data ownership definitions)
-- Mapped glossary terms to technical assets in the catalog
-- [List the 5-10 terms you defined]
+### 3. Data Classification & Sensitivity Labelling
+Applying classification labels to fields containing customer-identifiable and financially sensitive information, in line with UK GDPR data protection principles and standard KYC data handling practice.
 
-### 4. Data Lineage
-- Documented source-to-target data flow for [specific dataset/process]
-- [Add lineage diagram/screenshot]
+### 4. Business Glossary
+Defining a business glossary of Critical Data Elements — including transaction type, customer identifier, account reference, transaction value, and fraud indicator fields — establishing shared, unambiguous definitions between business and technical stakeholders.
 
-## Key Data Governance Concepts Demonstrated
-- Data cataloguing and metadata management
-- Business glossary and data dictionary development
-- Data classification and sensitivity labelling
-- Data lineage documentation
-- Data ownership and stewardship principles
+### 5. Data Lineage
+Mapping the data's journey from source system through to its governed, catalogued state, capturing transformation points to support traceability and regulatory audit requirements.
 
-## Tools Used
-- Microsoft Purview
-- [Add Collibra/Informatica/Snowflake once you've used them]
-- Excel / SQL (for underlying data prep)
+### 6. Data Quality & Governance Standards
+Applying data quality dimensions (completeness, accuracy, consistency, timeliness) as governance controls, consistent with practice in regulated banking environments.
 
-## What I Learned
-[Write 2-3 honest sentences here once the project is done — this is often what a recruiter reads first]
+## Why This Project
+Data governance depends on practitioners who can operationalise policy: cataloguing data, defining shared business language, assigning accountability, and making data traceable and trustworthy. This project applies that discipline directly, using industry-standard tooling, to demonstrate practical, hands-on data governance capability beyond framework knowledge alone.
 
-## About This Project
-Built as part of my continued professional development in data governance, alongside training through the Berkeley Data Strategists DMP Cohort.
+## Tools & Technologies
+- **Microsoft Purview** — data cataloguing, classification, business glossary, lineage
+- **DAMA-DMBOK principles** — governance framework alignment
+
+## Methodology
+This project follows a structured governance implementation approach: establishing the governance environment, cataloguing and classifying data, defining business terminology and ownership, and documenting lineage, mirroring the operating model used in enterprise data governance functions.
+
+## About
+Built as part of ongoing professional development in data governance, alongside data governance training through the Berkeley Data Strategists DMP Cohort.
 
 ---
-**Charity Ikeh** | Data Governance & Data Quality Analyst | [LinkedIn link]
+**Charity Ikeh** | Data Governance & Data Quality Analyst |[https://www.linkedin.com/in/charityikeh/]
