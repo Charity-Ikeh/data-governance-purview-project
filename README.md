@@ -1,7 +1,7 @@
 # Enterprise Data Governance Project — Microsoft Purview Implementation
 
 ## Status
-🚧 In Progress — build started July 2026
+🚧 In Progress — Governance domain and business glossary complete
 
 ## Overview
 This project demonstrates the practical implementation of enterprise data governance using Microsoft Purview, applied to a representative banking transaction dataset. It covers the core disciplines of modern data governance: data cataloguing, classification, business glossary development, data ownership and stewardship definition, and data lineage documentation.
@@ -48,6 +48,18 @@ Data governance depends on practitioners who can operationalise policy: catalogu
 
 ## Methodology
 This project follows a structured governance implementation approach: establishing the governance environment, cataloguing and classifying data, defining business terminology and ownership, and documenting lineage, mirroring the operating model used in enterprise data governance functions.
+
+## Outcomes
+
+Completed as part of this project:
+
+- Set up a Microsoft Purview environment via Microsoft 365, including upgrading from the free Discovery plan to the Enterprise tier by linking an Azure subscription
+- Created and published a governance domain ("Banking Operations") within Microsoft Purview's Unified Catalog
+- Defined and published a business glossary of 9 terms covering core banking transaction data elements: Transaction Value, Customer Identifier, Fraud Flag, Transaction Type, Account Reference, Transaction Channel, Transaction Date, Currency Code, and Beneficiary Bank
+- Each term includes a clear business definition and assigned ownership, establishing a shared vocabulary for the dataset
+
+See `/screenshots` for evidence of the published governance domain and glossary terms.
+
 
 ## About
 Built as part of ongoing professional development in data governance, alongside data governance training through the Berkeley Data Strategists DMP Cohort.
