@@ -70,6 +70,18 @@ Completed as part of this project:
 See `/screenshots` for evidence of the published governance domain, glossary terms, and scanned data schema.
 
 
+## Data Lineage
+
+Automated lineage tracking in Microsoft Purview requires a connected data pipeline (such as Azure Data Factory) actively moving data between systems. As this project uses a static sample file rather than a live pipeline, lineage is documented manually below, reflecting the actual data journey:
+
+1. **Source**: NIBSS banking transaction dataset (20,000 records), originally sourced for the `banking-operations-analytics` portfolio project
+2. **Sampling**: A 200-row representative sample was extracted, preserving all original columns and data types
+3. **Storage**: Sample uploaded to Azure Blob Storage (`charitypurviewstore` account, `banking-sample` container)
+4. **Cataloguing**: Registered as a data source in Microsoft Purview and scanned, resulting in full schema detection across 42 columns
+
+This reflects a common real-world scenario in data governance: documenting lineage manually where source systems are not (yet) instrumented for automated tracking.
+
+
 ## About
 Built as part of ongoing professional development in data governance, alongside data governance training through the Berkeley Data Strategists DMP Cohort.
 
