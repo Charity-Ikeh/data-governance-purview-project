@@ -1,89 +1,86 @@
 # Enterprise Data Governance Project — Microsoft Purview Implementation
 
 ## Status
-✅ Complete — Governance domain, business glossary, data cataloguing, and lineage documentation all finished. Built as a hands-on demonstration of Microsoft Purview data governance capabilities.
+✅ Complete — Governance domain, business glossary, data cataloguing, and lineage documentation all finished. Built as hands-on practice with Microsoft Purview for data governance.
 
 ## Overview
-This project demonstrates the practical implementation of enterprise data governance using Microsoft Purview, applied to a representative banking transaction dataset. It covers the core disciplines of modern data governance: data cataloguing, classification, business glossary development, data ownership and stewardship definition, and data lineage documentation.
+This project shows practical, hands-on data governance work using Microsoft Purview, applied to a sample banking transaction dataset. It covers the core areas of data governance in practice: cataloguing data, defining a business glossary, assessing classification, assigning ownership, and documenting lineage.
 
-The project reflects how data governance functions operate in regulated environments such as banking and financial services, where trust, traceability, and accountability over data are business-critical, not optional.
+The work reflects how data governance is actually carried out in regulated environments like banking, where knowing what your data means, who owns it, and where it came from isn't optional, it's part of doing the job properly.
 
 ## Objectives
-- Establish a governed data catalog for a banking transaction dataset using Microsoft Purview
-- Apply data classification and sensitivity labelling aligned with UK GDPR and data protection principles
-- Define a business glossary of Critical Data Elements relevant to banking operations
-- Assign and document data ownership and stewardship roles
-- Document end-to-end data lineage to support audit readiness and regulatory traceability
-- Demonstrate the operational, day-to-day discipline of data governance practice, not just theoretical frameworks
+- Set up a governed data catalog for a banking transaction dataset in Microsoft Purview
+- Assess data classification against the dataset's actual fields, applying labels only where they genuinely fit
+- Build a business glossary covering the key data elements used in banking operations
+- Assign clear ownership at the governance domain level
+- Document data lineage, including being honest about what could and couldn't be automated
+- Show the day-to-day discipline of data governance work, not just the theory behind it
 
 ## Dataset
-Banking transaction dataset (NIBSS dataset, 20,000 records), covering customer transaction data across multiple channels — used here purely as the subject of governance activity: cataloguing, classification, glossary definition, and lineage mapping.
+A sample of a banking transaction dataset (NIBSS dataset, 20,000 records originally), used here as the subject of governance work: cataloguing, glossary definition, classification review, and lineage documentation.
 
-## Governance Framework Applied
+## Governance Work Carried Out
 
-### 1. Data Ownership & Stewardship
-Defining clear data ownership across the dataset's domains, identifying data stewards responsible for data quality and definition accuracy, and establishing accountability structures consistent with DAMA-DMBOK principles.
+### 1. Data Ownership
+Assigned ownership at the governance domain level in Microsoft Purview, so there's clear accountability for the domain's data assets, glossary terms, and definitions.
 
 ### 2. Data Cataloguing
-Registering the dataset within Microsoft Purview's Data Map, scanning to surface schema, structure, and metadata, and establishing a searchable, governed catalog entry.
+Registered the dataset as a data source in Purview and ran a full scan, which detected and catalogued all 42 columns along with their data types.
 
-### 3. Data Classification & Sensitivity Labelling
-Applying classification labels to fields containing customer-identifiable and financially sensitive information, in line with UK GDPR data protection principles and standard KYC data handling practice.
+### 3. Data Classification Review
+Checked the dataset's fields against Purview's built-in classification options to see which, if any, genuinely applied. Rather than forcing a label onto a field just to have something there, fields like customer_id and transaction_id were assessed and correctly left unclassified, since they're internal, engineered identifiers, not the kind of real-world data (like an actual national insurance number or card number) that Purview's built-in classifiers are designed to catch. Knowing when not to apply a classification is as much a part of the job as knowing when to apply one.
 
 ### 4. Business Glossary
-Defining a business glossary of Critical Data Elements — including transaction type, customer identifier, account reference, transaction value, and fraud indicator fields — establishing shared, unambiguous definitions between business and technical stakeholders.
+Built a glossary of 9 terms covering the key data elements in this dataset: transaction value, customer identifier, fraud flag, transaction type, account reference, transaction channel, transaction date, currency code, and beneficiary bank. Each term has a plain-English definition and an assigned owner.
 
 ### 5. Data Lineage
-Mapping the data's journey from source system through to its governed, catalogued state, capturing transformation points to support traceability and regulatory audit requirements.
+Documented how the data actually moved, from the original dataset through to being catalogued in Purview, since automated lineage tracking wasn't set up for this project (more on that below).
 
-### 6. Data Quality & Governance Standards
-Applying data quality dimensions (completeness, accuracy, consistency, timeliness) as governance controls, consistent with practice in regulated banking environments.
+## Why I Did This Project
+Data governance isn't just policy documents, it's the actual work of cataloguing data, agreeing on shared definitions, assigning ownership, and being able to trace where data came from. This project was about doing that work hands-on with real tooling, rather than just knowing the theory.
 
-## Why This Project
-Data governance depends on practitioners who can operationalise policy: cataloguing data, defining shared business language, assigning accountability, and making data traceable and trustworthy. This project applies that discipline directly, using industry-standard tooling, to demonstrate practical, hands-on data governance capability beyond framework knowledge alone.
+## Tools Used
+- **Microsoft Purview** — data cataloguing, classification review, business glossary, lineage
+- **Azure Blob Storage** — used as the data source connected to Purview for scanning
+- **DAMA-DMBOK principles** — used as a general reference for governance practice
 
-## Tools & Technologies
-- **Microsoft Purview** — data cataloguing, classification, business glossary, lineage
-- **DAMA-DMBOK principles** — governance framework alignment
-
-## Methodology
-This project follows a structured governance implementation approach: establishing the governance environment, cataloguing and classifying data, defining business terminology and ownership, and documenting lineage, mirroring the operating model used in enterprise data governance functions.
+## How I Approached It
+Set up the governance environment first, then worked through cataloguing and classification, built out the glossary and ownership, and finished with lineage documentation, roughly following how a governance function would actually be stood up in practice.
 
 ## Outcomes
 
-Completed as part of this project:
-
 **Governance domain and business glossary**
-- Created and published a governance domain ("Banking Operations") within Microsoft Purview's Unified Catalog
-- Defined and published a business glossary of 9 terms covering core banking transaction data elements: Transaction Value, Customer Identifier, Fraud Flag, Transaction Type, Account Reference, Transaction Channel, Transaction Date, Currency Code, and Beneficiary Bank
-- Each term includes a clear business definition and assigned ownership
+- Created and published a governance domain ("Banking Operations") in Microsoft Purview's Unified Catalog
+- Built and published a business glossary of 9 terms covering the core banking transaction data elements
+- Each term has a clear definition and an assigned owner
 
 **Data source connection and scanning**
-- Set up Azure Blob Storage and connected it to Microsoft Purview as a registered data source
-- Configured access permissions (Storage Blob Data Reader role) for Purview's managed identity to enable scanning
-- Ran a full scan against a sample banking transaction dataset, successfully detecting and cataloguing all 42 columns with their data types
+- Set up Azure Blob Storage and connected it to Purview as a registered data source
+- Configured the access permissions (Storage Blob Data Reader role) needed for Purview to actually scan it
+- Ran a full scan on the sample dataset, which correctly detected and catalogued all 42 columns and their data types
 
-**Classification assessment**
-- Reviewed Purview's built-in system classifications against the dataset's actual fields
-- Made the judgement that the sample dataset's engineered identifiers (e.g. customer_id, transaction_id) did not genuinely match any built-in pattern-based classifier, and did not apply mismatched classifications purely for the sake of having them present
+**Classification review**
+- Checked Purview's built-in classifications against the dataset's actual fields
+- Decided not to apply classifications that didn't genuinely match the data, since the sample's identifiers are engineered fields, not real-world PII patterns
 
 See `/screenshots` for evidence of the published governance domain, glossary terms, and scanned data schema.
 
-
 ## Data Lineage
 
-Automated lineage tracking in Microsoft Purview requires a connected data pipeline (such as Azure Data Factory) actively moving data between systems. As this project uses a static sample file rather than a live pipeline, lineage is documented manually below, reflecting the actual data journey:
+Automated lineage tracking in Purview needs a connected data pipeline (like Azure Data Factory) actively moving data between systems, which wasn't set up for this project. Instead, here's the actual journey of the data, documented manually:
 
-1. **Source**: NIBSS banking transaction dataset (20,000 records), originally sourced for the `banking-operations-analytics` portfolio project
-2. **Sampling**: A 200-row representative sample was extracted, preserving all original columns and data types
-3. **Storage**: Sample uploaded to Azure Blob Storage (`charitypurviewstore` account, `banking-sample` container)
-4. **Cataloguing**: Registered as a data source in Microsoft Purview and scanned, resulting in full schema detection across 42 columns
+1. **Source**: NIBSS banking transaction dataset (20,000 records), originally used in my `banking-operations-analytics` project
+2. **Sampling**: Took a 200-row sample, keeping all the original columns and data types
+3. **Storage**: Uploaded the sample to Azure Blob Storage (`charitypurviewstore` account, `banking-sample` container)
+4. **Cataloguing**: Registered it as a data source in Purview and scanned it, which picked up the full schema across 42 columns
 
-This reflects a common real-world scenario in data governance: documenting lineage manually where source systems are not (yet) instrumented for automated tracking.
-
+This is a common situation in real data governance work, documenting lineage by hand when the source systems aren't set up for automatic tracking yet.
 
 ## About
-Built as part of ongoing professional development in data governance, alongside data governance training through the Berkeley Data Strategists DMP Cohort.
+A hands-on data governance project built to demonstrate practical experience with Microsoft Purview, covering data cataloguing, business glossary development, classification review, and lineage documentation.
 
 ---
-**Charity Ikeh** | Data Governance & Data Quality Analyst |[https://www.linkedin.com/in/charityikeh/]
+**Charity Ikeh** | Data Governance & Data Quality Analyst | [https://www.linkedin.com/in/charityikeh/]
+
+---
+**Charity Ikeh** | Data Governance & Data Quality Analyst | [https://www.linkedin.com/in/charityikeh/]
