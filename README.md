@@ -81,6 +81,3 @@ A hands-on data governance project built to demonstrate practical experience wit
 
 ---
 **Charity Ikeh** | Data Governance & Data Quality Analyst | [https://www.linkedin.com/in/charityikeh/]
-
----
-**Charity Ikeh** | Data Governance & Data Quality Analyst | [https://www.linkedin.com/in/charityikeh/]
