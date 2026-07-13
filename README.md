@@ -1,7 +1,7 @@
 # Enterprise Data Governance Project — Microsoft Purview Implementation
 
 ## Status
-🚧 In Progress — Governance domain and business glossary complete
+✅ Complete — Governance domain, business glossary, data cataloguing, and lineage documentation all finished. Built as a hands-on demonstration of Microsoft Purview data governance capabilities.
 
 ## Overview
 This project demonstrates the practical implementation of enterprise data governance using Microsoft Purview, applied to a representative banking transaction dataset. It covers the core disciplines of modern data governance: data cataloguing, classification, business glossary development, data ownership and stewardship definition, and data lineage documentation.
