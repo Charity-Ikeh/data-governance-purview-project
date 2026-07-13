@@ -53,12 +53,21 @@ This project follows a structured governance implementation approach: establishi
 
 Completed as part of this project:
 
-- Set up a Microsoft Purview environment via Microsoft 365, including upgrading from the free Discovery plan to the Enterprise tier by linking an Azure subscription
+**Governance domain and business glossary**
 - Created and published a governance domain ("Banking Operations") within Microsoft Purview's Unified Catalog
 - Defined and published a business glossary of 9 terms covering core banking transaction data elements: Transaction Value, Customer Identifier, Fraud Flag, Transaction Type, Account Reference, Transaction Channel, Transaction Date, Currency Code, and Beneficiary Bank
-- Each term includes a clear business definition and assigned ownership, establishing a shared vocabulary for the dataset
+- Each term includes a clear business definition and assigned ownership
 
-See `/screenshots` for evidence of the published governance domain and glossary terms.
+**Data source connection and scanning**
+- Set up Azure Blob Storage and connected it to Microsoft Purview as a registered data source
+- Configured access permissions (Storage Blob Data Reader role) for Purview's managed identity to enable scanning
+- Ran a full scan against a sample banking transaction dataset, successfully detecting and cataloguing all 42 columns with their data types
+
+**Classification assessment**
+- Reviewed Purview's built-in system classifications against the dataset's actual fields
+- Made the judgement that the sample dataset's engineered identifiers (e.g. customer_id, transaction_id) did not genuinely match any built-in pattern-based classifier, and did not apply mismatched classifications purely for the sake of having them present
+
+See `/screenshots` for evidence of the published governance domain, glossary terms, and scanned data schema.
 
 
 ## About
